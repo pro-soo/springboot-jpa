@@ -32,7 +32,7 @@ public abstract class Item {
         stock 증가
      */
     public void addStock(int quantity){
-        this.stockQuantity = quantity;
+        this.stockQuantity += quantity;
     }
 
     /**
