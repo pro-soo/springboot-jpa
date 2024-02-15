@@ -3,7 +3,9 @@ package jpabook.jpashop.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
 
+import java.sql.Blob;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,9 @@ public class Order {
     private Delivery delivery;
 
 
+    @Lob
+    @Value("${spring.datasource.dbms-type:postgresql}")
+    private Blob refData;
     private LocalDateTime orderDate;    //주문시간
 
     @Enumerated(EnumType.STRING)
